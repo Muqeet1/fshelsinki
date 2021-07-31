@@ -11,15 +11,27 @@ const Greeting = () => {
     </div>
   )
 }
+const Passprops = props =>{
+  return <p>Hello, {props.name}</p>
+}
+
  return (
   <div>
     <p>Hello World! it is {now.toString()} </p>
     <p>{a} plus {b} is {a+b} </p>
-   <div style={{textAlign: "center"}}> <Greeting />
+   <div style={{textAlign: "center"}}> 
+    
     <Greeting />
     <Greeting />
+
+    <Passprops name="Sara" />
+    <Passprops name="Conner" />
+
     <Greeting />
+    <Greeting />
+
   </div>
+    
   </div>
   );
 }
