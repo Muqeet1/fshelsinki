@@ -36,9 +36,10 @@ const App = () => {
   }
 
   const Total = props => {
-    const Numberexercise = props.numberexercises[0].exercises
-      + props.numberexercises[1].exercises
-      + props.numberexercises[2].exercises;
+    const Numberexercise = props.numberexercises.map(x => x.exercises)
+      .reduce((a, b) => (a + b)
+      )
+
     return <p>Total exercises are {Numberexercise}</p>;
   }
   return (
