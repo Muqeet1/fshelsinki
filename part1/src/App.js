@@ -59,3 +59,39 @@ const App = () => {
 
 }
 export default App;
+
+
+/*
+used array.map and array.reduce for experimenting
+  function Renderparts(thisaprop) {
+    const allparts = thisaprop.allparts.map(part => (
+      <p>{part.name + " "}
+        {part.exercises}
+      </p>
+    ))
+    return (<div>
+      {allparts}
+    </div>
+    )
+  }
+
+  const Header = props => {
+    return <h1>{props.course}</h1>
+  }
+
+  const Total = props => {
+    const Numberexercise = props.numberexercises.map(x => x.exercises)
+      .reduce((a, b) => (a + b)
+      )
+
+    return <p>Total exercises are {Numberexercise}</p>;
+  }
+  return (
+    <div>
+      <Header course={course.name} />
+      <Renderparts allparts={course.parts} />
+      <Total numberexercises={course.parts} />
+    </div>
+  )
+}
+*/
