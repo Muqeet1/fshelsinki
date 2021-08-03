@@ -1,7 +1,6 @@
 import React from "react";
 
 const App = () => {
-
   const course = {
     name: "Half Stack application development",
     parts: [
@@ -19,7 +18,6 @@ const App = () => {
       },
     ]
   }
-
 
   const Header = props => {
     return <h1>{props.course}</h1>
