@@ -2,10 +2,9 @@ import React from "react";
 
 const Course = ({ allcourses }) => {
   
-  const ContentHeading = () => <h2>{allcourses.name}</h2>;
-  
   const Content = ({ parts }) => {
-    const courseparts = parts.map((part) => (
+    const ContentHeading = () => <h2>{allcourses.name}</h2>;
+    const contentParts = parts.map((part) => (
       <p key={part.id}>
         {part.name} {part.exercises}
       </p>
@@ -13,7 +12,7 @@ const Course = ({ allcourses }) => {
     return (
       <>
         <ContentHeading />
-        {courseparts}
+        {contentParts}
       </>
     );
   };
