@@ -1,11 +1,10 @@
 import React from "react";
 
-const CountriesList = ({ person }) => (
+const CountriesList = ({ country }) => (
   <div>
-  <li>
-    Country:{person.name} Region:{person.region}
-  </li>
-  <img src={person.flag} style={{width: 100}} />
+    <li>
+      Country:{country.name.common} --- Region:{country.region}
+    </li>
   </div>
 );
 
