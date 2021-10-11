@@ -7,6 +7,8 @@ import axios from "axios";
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [showResults, setShowResults] = useState(false);
+  const [index, setIndex] = useState("");
   const handleSearchChange = (event) => setSearchValue(event.target.value);
 
   const handleSearch = countries.filter((country) =>
@@ -22,7 +24,12 @@ const App = () => {
         setCountries(response.data);
       });
   };
-
+  const returnName = (i) => {
+    setShowResults(true);
+    setIndex(i);
+    const country = handleSearch[i];
+    return <div>{<CountriesDetails country={country[0]} i={index} />}</div>;
+  };
   useEffect(getCountries, []);
   const displayCountry = () => {
     if (handleSearch) {
@@ -32,17 +39,38 @@ const App = () => {
         return <p>Too many matches, Specify another filter</p>;
       } else if (handleSearch.length > 1 && handleSearch.length <= 10) {
         return (
-          <ul>
-            {handleSearch.map((country) => (
-              <li>{country.name.official} <button>show</button> </li>
+          <div>
+            {handleSearch.map((country, i) => (
+              <>
+                {!showResults ? (
+                  <React.Fragment>
+                    <div>
+                      <CountriesList country={country} key={country.id} />
+                      <button type="button" onClick={() => returnName(i)}>
+                        Show
+                      </button>
+                    </div>
+                  </React.Fragment>
+                ) : showResults && handleSearch.length <= 6 ? (
+                  <React.Fragment>
+                    <CountriesDetails country={handleSearch[i]} />
+                  </React.Fragment>
+                ) : (
+                  setShowResults(false)
+                )}
+              </>
             ))}
-          </ul>
+          </div>
         );
       } else if (handleSearch.length === 1) {
         return (
           <div>
             {handleSearch.map((country) => (
-              <CountriesDetails country={country} key={country.latlng} />
+              <CountriesDetails
+                country={country}
+                i={index}
+                key={country.latlng}
+              />
             ))}
           </div>
         );
@@ -51,11 +79,7 @@ const App = () => {
     return (
       <div>
         {countries.map((country) => (
-          <CountriesList
-            country={country}
-            key={country.latlng}
-            api_key={api_key}
-          />
+          <CountriesList country={country} key={country.latlng} />
         ))}
       </div>
     );

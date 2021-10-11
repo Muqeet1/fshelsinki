@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Weather from "./Weather";
 
-const CountriesDetails = ({ country }) => {
+const CountriesDetails = ({ country, i }) => {
   const [weather, setWeather] = useState(null);
   useEffect(() => {
-    const api_key = "732bc70ca860384aa6cd19e0d691c11c";
+    const api_key = "";
 
     axios
       .get(
@@ -29,7 +29,7 @@ const CountriesDetails = ({ country }) => {
         ))}
       </ul>
       <li>
-        <img height="100" src={country.flags.svg} />
+        <img height="100" src={country.flags.svg} alt="country flag" />
       </li>
       {weather ? <Weather weather={weather} /> : ""}
     </div>
