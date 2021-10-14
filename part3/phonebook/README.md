@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Eslint issue resolve:
+Frontend's build is working with backend node, though there were few issues after adding lint so in case "npm install" does not work out, run "npm audit fix" & "npm install react-scripts"
+
 ## Available Scripts
 
 In the project directory, you can run:
