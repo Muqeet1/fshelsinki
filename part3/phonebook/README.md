@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Eslint issue resolve:
 Frontend's build is working with backend node, though there were few issues after adding lint so in case "npm install" does not work out, run "npm install" & "npm audit fix" & "npm install react-scripts" in the mentioned order.
-
+## Hosted at heroku: 
+https://phonedir-backend.herokuapp.com/
 ## Available Scripts
 
 In the project directory, you can run:
