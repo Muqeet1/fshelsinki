@@ -1,0 +1,11 @@
+POST  http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlciIsImlkIjoiNjE2YzM5NjM4NzUxMmU1NDYyNTYwYWQ4IiwiaWF0IjoxNjM0NTQ3MjcxfQ.f-Lcmvxb6ix3_BNnPTEYu-YetKAP5wYBOiiosAQtNtI
+
+{
+   "author": "Monte Carlo",
+    "title": "token auth",
+    "url":"localhost:3001/api/blogs",
+    "likes": 522,
+    "user": "616c839981fec5257dcb56f8"
+}
